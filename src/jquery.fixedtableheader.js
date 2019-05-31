@@ -13,7 +13,9 @@ jQuery.fn.fixedtableheader = function (options) {
 
     this.each(function (i) {
         var $tbl = $(this);
-        var $tblhfixed = $tbl.find("tr:lt(" + settings.headerrowsize + ")");
+        var $tblhfixed = $tbl.find('thead tr'); // if there are thead
+        if (!$tblhfixed.length) // else the first n row
+            $tblhfixed = $tbl.find("tr:lt(" + settings.headerrowsize + ")");
         var headerelement = "th";
         if ($tblhfixed.find(headerelement).length == 0)
             headerelement = "td";
