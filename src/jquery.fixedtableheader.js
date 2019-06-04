@@ -21,7 +21,7 @@ jQuery.fn.fixedtableheader = function (options) {
             $tblhfixed.find(headerelement).each(function () {
                 $(this).css("width", $(this).width());
             });
-            var $clonedTable = $tbl.clone().empty();
+            var $clonedTable = $tbl.clone().empty().addClass('fixedtableheader');
             var tblwidth = GetTblWidth($tbl);
             $clonedTable.attr("id", "fixedtableheader" + i).css({
                 "position": "fixed",
